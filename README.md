@@ -243,16 +243,16 @@ graph TD
 
 ```mermaid
 graph LR
-    A[/new-project/] --> B[/discuss-phase/]
-    B --> C[/plan-phase/]
-    C --> D[/execute-phase/]
-    D --> E[/verify-work/]
-    E --> F[/ship/]
+    A["new-project"] --> B["discuss-phase"]
+    B --> C["plan-phase"]
+    C --> D["execute-phase"]
+    D --> E["verify-work"]
+    E --> F["ship"]
     F -->|Next phase| B
 
-    D --> D1[Wave 1: Plan A + Plan B]
-    D1 --> D2[Wave 2: Plan C + Plan D]
-    D2 --> D3[Wave 3: Plan E]
+    D --> D1["Wave 1: Plan A + Plan B"]
+    D1 --> D2["Wave 2: Plan C + Plan D"]
+    D2 --> D3["Wave 3: Plan E"]
 
     style A fill:#6cf,stroke:#333
     style D fill:#6f6,stroke:#333
@@ -298,17 +298,17 @@ graph TD
 
 ```mermaid
 graph LR
-    A[Session] --> B[/learn]
-    B --> C[Instinct + confidence]
-    C --> D[/evolve]
+    A[Session] --> B["learn"]
+    B --> C["Instinct + confidence"]
+    C --> D["evolve"]
     D --> E[Skill]
 
-    A --> F[/skill-create]
+    A --> F["skill-create"]
     F --> E
 
-    C --> G[/instinct-export]
+    C --> G["instinct-export"]
     G --> H[Share with team]
-    H --> I[/instinct-import]
+    H --> I["instinct-import"]
     I --> C
 
     style C fill:#fc0,stroke:#333
@@ -361,17 +361,17 @@ graph TD
 
 ```mermaid
 graph LR
-    A[Think] --> B[/office-hours/]
-    B --> C[/plan-ceo-review/]
-    C --> D[/plan-eng-review/]
+    A[Think] --> B["office-hours"]
+    B --> C["plan-ceo-review"]
+    C --> D["plan-eng-review"]
     D --> E[Build]
-    E --> F[/review/]
-    F --> G[/qa/ - Real Browser]
-    G --> H[/ship/]
-    H --> I[/retro/]
+    E --> F["review"]
+    F --> G["qa + Real Browser"]
+    G --> H["ship"]
+    H --> I["retro"]
 
     G --> G1[Chromium daemon]
-    G1 --> G2[~100ms/command]
+    G1 --> G2["~100ms per command"]
 
     style B fill:#6cf,stroke:#333
     style F fill:#fc0,stroke:#333
@@ -386,11 +386,11 @@ graph TD
     A[Conductor] --> B[Sprint 1]
     A --> C[Sprint 2]
     A --> D[Sprint 3]
-    A --> E[Sprint N...]
+    A --> E["Sprint N..."]
 
-    B --> B1[/office-hours/ → /plan/ → /build/ → /qa/ → /ship/]
-    C --> C1[/office-hours/ → /plan/ → /build/ → /qa/ → /ship/]
-    D --> D1[/office-hours/ → /plan/ → /build/ → /qa/ → /ship/]
+    B --> B1["office-hours → plan → build → qa → ship"]
+    C --> C1["office-hours → plan → build → qa → ship"]
+    D --> D1["office-hours → plan → build → qa → ship"]
 
     style A fill:#f9f,stroke:#333
 ```
