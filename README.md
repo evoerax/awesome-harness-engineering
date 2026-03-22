@@ -188,13 +188,13 @@ graph LR
 
 ```mermaid
 graph TD
-    A[Failure 2x] -->|L1 温和失望| B[Switch approach]
+    A[Failure 2x] -->|L1 Mild Disappointment| B[Switch approach]
     A -->|Still failing| C[Failure 3x]
-    C -->|L2 灵魂拷问| D[Search + Read source + 3 hypotheses]
+    C -->|L2 Soul Searching| D[Search + Read source + 3 hypotheses]
     C -->|Still failing| E[Failure 4x]
-    E -->|L3 绩效考核| F[7-item checklist + 3 new hypotheses]
+    E -->|L3 Performance Review| F[7-item checklist + 3 new hypotheses]
     E -->|Still failing| G[Failure 5x+]
-    G -->|L4 毕业警告| H[Panic mode: minimal PoC + isolated env]
+    G -->|L4 Graduation Warning| H[Panic mode: minimal PoC + isolated env]
 
     style A fill:#ff9,stroke:#333
     style C fill:#fc0,stroke:#333
@@ -206,10 +206,10 @@ graph TD
 
 | Flavor | Source | Quote |
 |--------|--------|-------|
-| 🟠 Alibaba | 阿里巴巴 | "底层逻辑、闭环、owner意识" |
-| 🟡 ByteDance | 字节跳动 | "ROI算过了吗？追求极致" |
-| 🔴 Huawei | 华为 | "烧不死的鸟是凤凰" |
-| 🟢 Tencent | 腾讯 | "赛马机制，赛不过就换一匹" |
+| 🟠 Alibaba | Alibaba | "Underlying logic, closed loop, owner consciousness" |
+| 🟡 ByteDance | ByteDance | "Have you calculated ROI? Pursue perfection" |
+| 🔴 Huawei | Huawei | "The bird that doesn't burn is a phoenix" |
+| 🟢 Tencent | Tencent | "Horse racing mechanism — if you can't race, change horses" |
 | 🟤 Netflix | Netflix | "Keeper Test — would I fight to keep you?" |
 | ⬛ Musk | Elon Musk | "Extremely hardcore. Ship or die." |
 | ⬜ Jobs | Steve Jobs | "A players hire A players." |
