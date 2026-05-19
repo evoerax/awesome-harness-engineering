@@ -413,6 +413,36 @@ graph TD
 
 ---
 
+### agenttrace
+
+> "What did my agents spend?" — local observability for coding agent sessions.
+
+**Session Pipeline:**
+
+```mermaid
+graph LR
+    A[Local Session Logs] --> B[Parse + Normalize]
+    B --> C[Cost / Tokens / Time]
+    B --> D[Failures / Latency / Health]
+    C --> E[TUI + Reports]
+    D --> E
+    E --> F[CI Gates]
+
+    style B fill:#6cf,stroke:#333
+    style E fill:#6f6,stroke:#333
+    style F fill:#fc0,stroke:#333
+```
+
+| Metric | Value |
+|--------|-------|
+| Sources | Claude Code, Codex CLI, Gemini CLI, Qwen Code, Aider, Cursor exports, OpenCode, OpenClaw, and more |
+| Reports | TUI, JSON, Markdown, HTML |
+| Unique Feature | Local-first multi-agent session observability + CI health gates |
+
+→ [Full documentation →](docs/tools/agenttrace.md)
+
+---
+
 ## Deep Comparison
 
 ### By Philosophy
@@ -424,6 +454,7 @@ graph TD
 | Get Shit Done | Context engineering | "Tell me what you want" |
 | Everything Claude Code | Full toolbox | "Here's everything" |
 | gstack | Virtual team | "Act like a team" |
+| agenttrace | Observability | "Show what happened" |
 
 ### By Scale
 
@@ -434,6 +465,7 @@ graph TD
 | Get Shit Done | — | 16 | 50 | 4 | — | — |
 | Everything Claude Code | 108 | 25 | 57 | 20+ | 34 | 14 |
 | gstack | 21 | — | 21 | — | — | — |
+| agenttrace | — | — | 1 | — | — | — |
 
 ### By Unique Feature
 
@@ -444,6 +476,7 @@ graph TD
 | Get Shit Done | Fresh context per task | Solves context rot — quality stays stable |
 | Everything Claude Code | Continuous learning | Agent learns your patterns over time |
 | gstack | Real browser | Agent can "see" web pages, ~100ms/command |
+| agenttrace | Local session observability | Finds expensive, slow, and unhealthy agent runs without uploading logs |
 
 ### By Platform Coverage
 
@@ -454,6 +487,7 @@ graph TD
 | Superpowers | **5** | Claude Code, Cursor, OpenCode, Codex, Gemini |
 | Everything Claude Code | **4** | Claude Code, Cursor, Codex, OpenCode |
 | gstack | **4** | Claude Code, Codex, Gemini, Cursor |
+| agenttrace | **10+** | Claude Code, Codex, Gemini, Qwen Code, Cursor, Aider, OpenCode, OpenClaw, Hermes Agent, Kimi CLI, Copilot-style logs |
 
 ### By What Problem It Solves
 
@@ -464,6 +498,7 @@ graph TD
 | "AI quality degrades over time" | **Get Shit Done** (fresh context) |
 | "I want everything" | **Everything Claude Code** (full system) |
 | "I want a virtual team" | **gstack** (role-based sprints) |
+| "I can't see agent costs or slow sessions" | **agenttrace** (local observability + CI gates) |
 
 ### Tool × Harness Support Matrix
 
@@ -474,6 +509,7 @@ graph TD
 | Get Shit Done | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Everything Claude Code | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ |
 | gstack | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
+| agenttrace | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
 
 ---
 
@@ -497,7 +533,8 @@ awesome-harness-engineering/
         ├── pua.md
         ├── get-shit-done.md
         ├── everything-claude-code.md
-        └── gstack.md
+        ├── gstack.md
+        └── agenttrace.md
 ```
 
 ---

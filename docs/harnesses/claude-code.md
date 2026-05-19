@@ -51,6 +51,7 @@ Claude Code is Anthropic's native coding agent — the most feature-complete har
 - ✅ Get Shit Done
 - ✅ Everything Claude Code
 - ✅ gstack
+- ✅ agenttrace
 
 ## Links
 
