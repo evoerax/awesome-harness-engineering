@@ -58,6 +58,7 @@ alwaysApply: false
 - ✅ PUA
 - ✅ Everything Claude Code
 - ✅ gstack
+- ✅ agenttrace
 
 ## Links
 

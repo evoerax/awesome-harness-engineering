@@ -413,6 +413,36 @@ graph TD
 
 ---
 
+### agenttrace
+
+> "我的 Agent 花了什么？" — 编程 Agent 会话的本地可观测性。
+
+**会话处理链路：**
+
+```mermaid
+graph LR
+    A[本地会话日志] --> B[解析 + 归一化]
+    B --> C[成本 / Token / 耗时]
+    B --> D[失败 / 延迟 / 健康度]
+    C --> E[TUI + 报告]
+    D --> E
+    E --> F[CI Gates]
+
+    style B fill:#6cf,stroke:#333
+    style E fill:#6f6,stroke:#333
+    style F fill:#fc0,stroke:#333
+```
+
+| 指标 | 值 |
+|------|-----|
+| 来源 | Claude Code、Codex CLI、Gemini CLI、Qwen Code、Aider、Cursor exports、OpenCode、OpenClaw 等 |
+| 报告 | TUI、JSON、Markdown、HTML |
+| 独特能力 | 本地优先的多 Agent 会话可观测性 + CI 健康门禁 |
+
+→ [完整文档 →](docs/tools/agenttrace.md)
+
+---
+
 ## 深度对比
 
 ### 设计哲学
@@ -424,6 +454,7 @@ graph TD
 | Get Shit Done | 上下文工程 | "告诉我你要什么" |
 | Everything Claude Code | 全面工具箱 | "给你所有可能需要的" |
 | gstack | 虚拟团队 | "像团队一样运作" |
+| agenttrace | 可观测性 | "看清发生了什么" |
 
 ### 规模对比
 
@@ -434,6 +465,7 @@ graph TD
 | Get Shit Done | — | 16 | 50 | 4 | — | — |
 | Everything Claude Code | 108 | 25 | 57 | 20+ | 34 | 14 |
 | gstack | 21 | — | 21 | — | — | — |
+| agenttrace | — | — | 1 | — | — | — |
 
 ### 独特能力
 
@@ -444,6 +476,7 @@ graph TD
 | Get Shit Done | Fresh context per task | 解决上下文腐化，质量稳定 |
 | Everything Claude Code | 持续学习 | Agent 会学习你的模式 |
 | gstack | 真实浏览器 | Agent 能"看到"网页，~100ms/命令 |
+| agenttrace | 本地会话可观测性 | 不上传日志也能发现高成本、慢速和不健康的 Agent 运行 |
 
 ### 平台覆盖度
 
@@ -454,6 +487,7 @@ graph TD
 | Superpowers | **5** | Claude Code, Cursor, OpenCode, Codex, Gemini |
 | Everything Claude Code | **4** | Claude Code, Cursor, Codex, OpenCode |
 | gstack | **4** | Claude Code, Codex, Gemini, Cursor |
+| agenttrace | **10+** | Claude Code, Codex, Gemini, Qwen Code, Cursor, Aider, OpenCode, OpenClaw, Hermes Agent, Kimi CLI, Copilot-style logs |
 
 ### 解决什么问题
 
@@ -464,6 +498,7 @@ graph TD
 | "AI 对话越长质量越差" | **Get Shit Done**（fresh context） |
 | "我想要全套" | **Everything Claude Code**（完整系统） |
 | "我想要一个虚拟团队" | **gstack**（角色分工冲刺） |
+| "我看不到 Agent 成本或慢会话" | **agenttrace**（本地可观测性 + CI 门禁） |
 
 ### 工具 × 平台 支持矩阵
 
@@ -474,6 +509,7 @@ graph TD
 | Get Shit Done | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Everything Claude Code | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ |
 | gstack | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
+| agenttrace | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
 
 ---
 
@@ -497,7 +533,8 @@ awesome-harness-engineering/
         ├── pua.md
         ├── get-shit-done.md
         ├── everything-claude-code.md
-        └── gstack.md
+        ├── gstack.md
+        └── agenttrace.md
 ```
 
 ---

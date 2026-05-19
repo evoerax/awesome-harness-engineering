@@ -28,6 +28,7 @@ curl -o ~/.openclaw/skills/pua/SKILL.md ...
 
 - ✅ PUA
 - ✅ Get Shit Done
+- ✅ agenttrace
 
 ## Links
 

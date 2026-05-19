@@ -47,6 +47,7 @@ description = "Correctness, security, and test review"
 - ✅ Get Shit Done
 - ✅ Everything Claude Code
 - ✅ gstack
+- ✅ agenttrace
 
 ## Links
 

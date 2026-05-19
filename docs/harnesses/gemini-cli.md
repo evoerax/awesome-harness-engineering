@@ -28,6 +28,7 @@ gemini extensions update superpowers
 - ✅ PUA
 - ✅ Get Shit Done
 - ✅ gstack
+- ✅ agenttrace
 
 ## Links
 
