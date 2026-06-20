@@ -20,9 +20,9 @@ Harnesses (where they run)          Tools (what they do)
 ├── Cursor                          ├── PUA — stress-driven problem solving
 ├── Codex                           ├── Get Shit Done — context engineering
 ├── OpenClaw                        ├── Everything Claude Code — full optimization
-├── OpenCode                        ├── gstack — virtual engineering team
-├── Gemini CLI                      └── ...
-├── Antigravity
+├── OpenCode                        ├── ax — telemetry graph
+├── Gemini CLI                      ├── gstack — virtual engineering team
+├── Antigravity                     └── ...
 └── ...
 ```
 
@@ -353,6 +353,36 @@ graph TD
 
 ---
 
+### ax
+
+> Local telemetry and recall graph for coding agents.
+
+**What it tracks:**
+
+```mermaid
+graph LR
+    A[Harness Transcripts] --> B[ax ingest]
+    C[OTLP Events] --> B
+    D[Git History] --> B
+    E[Installed Skills] --> B
+    B --> F[Local SurrealDB Graph]
+    F --> G[CLI Queries]
+    F --> H[Dashboard]
+    F --> I[MCP Server]
+```
+
+| Metric | Value |
+|--------|-------|
+| Harnesses | Claude Code, Codex, OpenCode, Cursor, Pi |
+| Storage | Local SurrealDB |
+| Interfaces | CLI, dashboard, read-only MCP |
+| MCP | 18 query tools |
+| Unique Feature | Connects sessions, costs, tool calls, skills, OTLP events, and Git history |
+
+→ [Full documentation →](docs/tools/ax.md)
+
+---
+
 ### gstack
 
 > "Act like a team" — virtual engineering team (YC CEO's system).
@@ -423,6 +453,7 @@ graph TD
 | PUA | Pressure-driven | "Don't you dare give up" |
 | Get Shit Done | Context engineering | "Tell me what you want" |
 | Everything Claude Code | Full toolbox | "Here's everything" |
+| ax | Local telemetry | "Show what happened" |
 | gstack | Virtual team | "Act like a team" |
 
 ### By Scale
@@ -433,6 +464,7 @@ graph TD
 | PUA | 7 | 3 | 5 | 1 | — | — |
 | Get Shit Done | — | 16 | 50 | 4 | — | — |
 | Everything Claude Code | 108 | 25 | 57 | 20+ | 34 | 14 |
+| ax | 1 | — | CLI | SDK hooks | — | 18 tools |
 | gstack | 21 | — | 21 | — | — | — |
 
 ### By Unique Feature
@@ -443,6 +475,7 @@ graph TD
 | PUA | Benchmark data | Only tool with quantified effectiveness |
 | Get Shit Done | Fresh context per task | Solves context rot — quality stays stable |
 | Everything Claude Code | Continuous learning | Agent learns your patterns over time |
+| ax | Local telemetry graph | Shows which sessions, tools, skills, costs, OTLP events, and commits produced an outcome |
 | gstack | Real browser | Agent can "see" web pages, ~100ms/command |
 
 ### By Platform Coverage
@@ -451,6 +484,7 @@ graph TD
 |------|:-----------:|-----------|
 | PUA | **9** | Claude Code, Cursor, Codex, OpenClaw, OpenCode, Gemini, VSCode, Kiro, CodeBuddy |
 | Get Shit Done | **6** | Claude Code, OpenCode, Gemini, Codex, Copilot, Antigravity |
+| ax | **5** | Claude Code, Codex, OpenCode, Cursor, Pi |
 | Superpowers | **5** | Claude Code, Cursor, OpenCode, Codex, Gemini |
 | Everything Claude Code | **4** | Claude Code, Cursor, Codex, OpenCode |
 | gstack | **4** | Claude Code, Codex, Gemini, Cursor |
@@ -462,6 +496,7 @@ graph TD
 | "AI writes bad code" | **Superpowers** (TDD workflow) |
 | "AI gives up too easily" | **PUA** (pressure escalation) |
 | "AI quality degrades over time" | **Get Shit Done** (fresh context) |
+| "I need to know what agents did and cost" | **ax** (local telemetry graph) |
 | "I want everything" | **Everything Claude Code** (full system) |
 | "I want a virtual team" | **gstack** (role-based sprints) |
 
@@ -473,6 +508,7 @@ graph TD
 | PUA | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Get Shit Done | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Everything Claude Code | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ |
+| ax | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ |
 | gstack | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 
 ---
@@ -497,6 +533,7 @@ awesome-harness-engineering/
         ├── pua.md
         ├── get-shit-done.md
         ├── everything-claude-code.md
+        ├── ax.md
         └── gstack.md
 ```
 

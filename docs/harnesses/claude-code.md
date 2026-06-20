@@ -50,6 +50,7 @@ Claude Code is Anthropic's native coding agent — the most feature-complete har
 - ✅ PUA
 - ✅ Get Shit Done
 - ✅ Everything Claude Code
+- ✅ ax
 - ✅ gstack
 
 ## Links

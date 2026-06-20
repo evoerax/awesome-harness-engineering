@@ -46,6 +46,7 @@ description = "Correctness, security, and test review"
 - ✅ PUA
 - ✅ Get Shit Done
 - ✅ Everything Claude Code
+- ✅ ax
 - ✅ gstack
 
 ## Links

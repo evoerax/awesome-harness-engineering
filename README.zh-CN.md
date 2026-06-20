@@ -20,9 +20,9 @@ AI 编程 Agent 的能力取决于两件事：**运行平台（Harness）** 和 
 ├── Cursor                          ├── PUA — 压力驱动
 ├── Codex                           ├── Get Shit Done — 上下文工程
 ├── OpenClaw                        ├── Everything Claude Code — 全面优化
-├── OpenCode                        ├── gstack — 虚拟工程团队
-├── Gemini CLI                      └── ...
-├── Antigravity
+├── OpenCode                        ├── ax — 遥测图谱
+├── Gemini CLI                      ├── gstack — 虚拟工程团队
+├── Antigravity                     └── ...
 └── ...
 ```
 
@@ -353,6 +353,36 @@ graph TD
 
 ---
 
+### ax
+
+> 面向编程 Agent 的本地遥测与回忆图谱。
+
+**追踪内容：**
+
+```mermaid
+graph LR
+    A[平台 Transcript] --> B[ax ingest]
+    C[OTLP 事件] --> B
+    D[Git 历史] --> B
+    E[已安装 Skills] --> B
+    B --> F[本地 SurrealDB 图谱]
+    F --> G[CLI 查询]
+    F --> H[Dashboard]
+    F --> I[MCP Server]
+```
+
+| 指标 | 值 |
+|------|-----|
+| 支持平台 | Claude Code, Codex, OpenCode, Cursor, Pi |
+| 存储 | 本地 SurrealDB |
+| 接口 | CLI、Dashboard、只读 MCP |
+| MCP | 18 个查询工具 |
+| 独特能力 | 把会话、成本、工具调用、Skills、OTLP 事件和 Git 历史连成一张本地图谱 |
+
+→ [完整文档 →](docs/tools/ax.md)
+
+---
+
 ### gstack
 
 > "像团队一样运作" — 虚拟工程团队（YC CEO 的系统）。
@@ -423,6 +453,7 @@ graph TD
 | PUA | 压力驱动 | "你敢放弃试试" |
 | Get Shit Done | 上下文工程 | "告诉我你要什么" |
 | Everything Claude Code | 全面工具箱 | "给你所有可能需要的" |
+| ax | 本地遥测 | "看清发生了什么" |
 | gstack | 虚拟团队 | "像团队一样运作" |
 
 ### 规模对比
@@ -433,6 +464,7 @@ graph TD
 | PUA | 7 | 3 | 5 | 1 | — | — |
 | Get Shit Done | — | 16 | 50 | 4 | — | — |
 | Everything Claude Code | 108 | 25 | 57 | 20+ | 34 | 14 |
+| ax | 1 | — | CLI | SDK hooks | — | 18 tools |
 | gstack | 21 | — | 21 | — | — | — |
 
 ### 独特能力
@@ -443,6 +475,7 @@ graph TD
 | PUA | Benchmark 数据 | 唯一有量化效果的工具 |
 | Get Shit Done | Fresh context per task | 解决上下文腐化，质量稳定 |
 | Everything Claude Code | 持续学习 | Agent 会学习你的模式 |
+| ax | 本地遥测图谱 | 追踪一次结果背后的会话、成本、工具、Skills、OTLP 事件和提交 |
 | gstack | 真实浏览器 | Agent 能"看到"网页，~100ms/命令 |
 
 ### 平台覆盖度
@@ -451,6 +484,7 @@ graph TD
 |------|:------:|-----------|
 | PUA | **9** | Claude Code, Cursor, Codex, OpenClaw, OpenCode, Gemini, VSCode, Kiro, CodeBuddy |
 | Get Shit Done | **6** | Claude Code, OpenCode, Gemini, Codex, Copilot, Antigravity |
+| ax | **5** | Claude Code, Codex, OpenCode, Cursor, Pi |
 | Superpowers | **5** | Claude Code, Cursor, OpenCode, Codex, Gemini |
 | Everything Claude Code | **4** | Claude Code, Cursor, Codex, OpenCode |
 | gstack | **4** | Claude Code, Codex, Gemini, Cursor |
@@ -462,6 +496,7 @@ graph TD
 | "AI 写的代码质量差" | **Superpowers**（TDD 工作流） |
 | "AI 太容易放弃" | **PUA**（压力升级） |
 | "AI 对话越长质量越差" | **Get Shit Done**（fresh context） |
+| "我想知道 Agent 做了什么、花了多少" | **ax**（本地遥测图谱） |
 | "我想要全套" | **Everything Claude Code**（完整系统） |
 | "我想要一个虚拟团队" | **gstack**（角色分工冲刺） |
 
@@ -473,6 +508,7 @@ graph TD
 | PUA | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Get Shit Done | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Everything Claude Code | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ |
+| ax | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ |
 | gstack | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 
 ---
@@ -497,6 +533,7 @@ awesome-harness-engineering/
         ├── pua.md
         ├── get-shit-done.md
         ├── everything-claude-code.md
+        ├── ax.md
         └── gstack.md
 ```
 

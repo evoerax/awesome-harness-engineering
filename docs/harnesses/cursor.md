@@ -57,6 +57,7 @@ alwaysApply: false
 - ✅ Superpowers
 - ✅ PUA
 - ✅ Everything Claude Code
+- ✅ ax
 - ✅ gstack
 
 ## Links
