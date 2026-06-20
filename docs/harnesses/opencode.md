@@ -53,6 +53,7 @@ export const MyPlugin = async ({ client, directory }) => {
 - ✅ PUA
 - ✅ Get Shit Done
 - ✅ Everything Claude Code
+- ✅ ax
 
 ## Links
 
