@@ -40,6 +40,10 @@ description = "Correctness, security, and test review"
 └── skills/           # Skills (SKILL.md)
 ```
 
+## Profile Management
+
+[codex-profiles](https://github.com/Ducksss/codex-profiles) is a dependency-free Bash wrapper for named `CODEX_HOME` profiles. On macOS, it can also launch named ChatGPT Desktop windows with separate local Electron state without copying authentication tokens.
+
 ## Tools That Support Codex
 
 - ✅ Superpowers

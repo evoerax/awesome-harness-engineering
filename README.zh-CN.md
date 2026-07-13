@@ -75,6 +75,7 @@ AI 编程 Agent 运行的平台。
 | **MCP** | 命令式 MCP 服务器 |
 | **Sandbox** | Strict / yolo 配置文件 |
 | **Context** | `AGENTS.md` |
+| **配置切换** | [codex-profiles](https://github.com/Ducksss/codex-profiles) 管理命名的 `CODEX_HOME` 配置，并为 ChatGPT 桌面窗口分离本地状态 |
 
 → [完整文档 →](docs/harnesses/codex.md)
 
