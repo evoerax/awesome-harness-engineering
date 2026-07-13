@@ -75,6 +75,7 @@ The platforms where AI coding agents run.
 | **MCP** | Command-based MCP servers |
 | **Sandbox** | Strict / yolo profiles |
 | **Context** | `AGENTS.md` |
+| **Profiles** | [codex-profiles](https://github.com/Ducksss/codex-profiles) for named `CODEX_HOME` profiles and separate ChatGPT Desktop local state |
 
 → [Full documentation →](docs/harnesses/codex.md)
 
