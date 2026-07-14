@@ -413,6 +413,21 @@ graph TD
 
 ---
 
+### Open Agent Relay
+
+> Share restricted local Claude Code and Codex capabilities without moving prompts, credentials, dependencies, or working directories off the host machine.
+
+| Metric | Value |
+|--------|-------|
+| Type | Local-first capability relay |
+| Harnesses | Claude Code, Codex |
+| Access | Trusted-LAN HTTP with shared-key authentication |
+| License | Apache-2.0 |
+
+→ [Open Agent Relay on GitHub →](https://github.com/ShakespeareLabs/open-agent-relay)
+
+---
+
 ## Deep Comparison
 
 ### By Philosophy
@@ -424,6 +439,7 @@ graph TD
 | Get Shit Done | Context engineering | "Tell me what you want" |
 | Everything Claude Code | Full toolbox | "Here's everything" |
 | gstack | Virtual team | "Act like a team" |
+| Open Agent Relay | Local capability sharing | "Keep the execution environment local" |
 
 ### By Scale
 
@@ -444,6 +460,7 @@ graph TD
 | Get Shit Done | Fresh context per task | Solves context rot — quality stays stable |
 | Everything Claude Code | Continuous learning | Agent learns your patterns over time |
 | gstack | Real browser | Agent can "see" web pages, ~100ms/command |
+| Open Agent Relay | Local execution boundary | Remote callers invoke allowlisted workflows while host files and credentials stay local |
 
 ### By Platform Coverage
 
@@ -454,6 +471,7 @@ graph TD
 | Superpowers | **5** | Claude Code, Cursor, OpenCode, Codex, Gemini |
 | Everything Claude Code | **4** | Claude Code, Cursor, Codex, OpenCode |
 | gstack | **4** | Claude Code, Codex, Gemini, Cursor |
+| Open Agent Relay | **2** | Claude Code, Codex |
 
 ### By What Problem It Solves
 
@@ -464,6 +482,7 @@ graph TD
 | "AI quality degrades over time" | **Get Shit Done** (fresh context) |
 | "I want everything" | **Everything Claude Code** (full system) |
 | "I want a virtual team" | **gstack** (role-based sprints) |
+| "I need to share a local agent safely" | **Open Agent Relay** (allowlisted local capabilities) |
 
 ### Tool × Harness Support Matrix
 
@@ -474,6 +493,7 @@ graph TD
 | Get Shit Done | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Everything Claude Code | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ |
 | gstack | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Open Agent Relay | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
 
 ---
 

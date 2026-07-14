@@ -413,6 +413,21 @@ graph TD
 
 ---
 
+### Open Agent Relay
+
+> 共享受限的本地 Claude Code 与 Codex 能力，同时让提示词、凭据、依赖和工作目录留在宿主机。
+
+| 指标 | 值 |
+|------|-----|
+| 类型 | 本地优先能力中继 |
+| Harness | Claude Code、Codex |
+| 访问方式 | 可信局域网 HTTP + 共享密钥认证 |
+| 许可证 | Apache-2.0 |
+
+→ [Open Agent Relay GitHub →](https://github.com/ShakespeareLabs/open-agent-relay)
+
+---
+
 ## 深度对比
 
 ### 设计哲学
@@ -424,6 +439,7 @@ graph TD
 | Get Shit Done | 上下文工程 | "告诉我你要什么" |
 | Everything Claude Code | 全面工具箱 | "给你所有可能需要的" |
 | gstack | 虚拟团队 | "像团队一样运作" |
+| Open Agent Relay | 本地能力共享 | "让执行环境留在本地" |
 
 ### 规模对比
 
@@ -444,6 +460,7 @@ graph TD
 | Get Shit Done | Fresh context per task | 解决上下文腐化，质量稳定 |
 | Everything Claude Code | 持续学习 | Agent 会学习你的模式 |
 | gstack | 真实浏览器 | Agent 能"看到"网页，~100ms/命令 |
+| Open Agent Relay | 本地执行边界 | 远程调用白名单工作流，宿主机文件和凭据保持本地 |
 
 ### 平台覆盖度
 
@@ -454,6 +471,7 @@ graph TD
 | Superpowers | **5** | Claude Code, Cursor, OpenCode, Codex, Gemini |
 | Everything Claude Code | **4** | Claude Code, Cursor, Codex, OpenCode |
 | gstack | **4** | Claude Code, Codex, Gemini, Cursor |
+| Open Agent Relay | **2** | Claude Code, Codex |
 
 ### 解决什么问题
 
@@ -464,6 +482,7 @@ graph TD
 | "AI 对话越长质量越差" | **Get Shit Done**（fresh context） |
 | "我想要全套" | **Everything Claude Code**（完整系统） |
 | "我想要一个虚拟团队" | **gstack**（角色分工冲刺） |
+| "我需要安全共享本地 Agent" | **Open Agent Relay**（白名单本地能力） |
 
 ### 工具 × 平台 支持矩阵
 
@@ -474,6 +493,7 @@ graph TD
 | Get Shit Done | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Everything Claude Code | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ |
 | gstack | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Open Agent Relay | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
 
 ---
 
